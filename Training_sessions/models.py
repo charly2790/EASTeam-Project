@@ -22,16 +22,17 @@ class Rpe(models.Model):
     name = models.CharField(max_length=40,blank = False, null = False)
     description = models.TextField(null = False)
 
+
 class Training_session(models.Model):
-    user = models.ForeignKey(User,on_delete = models.CASCADE)
+    user = models.ForeignKey(User,on_delete = models.DO_NOTHING)
     dt_assign = models.DateTimeField()
-    tr_type = models.ForeignKey(Training_type,on_delete = models.CASCADE)
+    tr_type = models.ForeignKey(Training_type,on_delete = models.DO_NOTHING)
     target = models.TextField(null = False)
     training = models.TextField()
     distance = models.FloatField()
     time = models.TimeField()
     done = models.BooleanField(default=False)
-    rpe = models.ForeignKey(Rpe,on_delete=models.CASCADE)
+    rpe = models.ForeignKey(Rpe,on_delete=models.DO_NOTHING)
     url = models.URLField()
     
 
