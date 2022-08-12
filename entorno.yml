@@ -1,0 +1,5 @@
+name: EAS_Team_Entorno
+dependencies: 
+  - python
+  - django
+  - django-environ
