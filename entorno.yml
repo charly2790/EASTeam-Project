@@ -1,5 +1,8 @@
 name: EAS_Team_Entorno
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
 dependencies: 
-  - python
-  - django
-  - django-environ
+  - python=3.10.5 
+  - django=4.1
