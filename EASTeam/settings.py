@@ -40,7 +40,7 @@ BASE_APPS = [
     'django.contrib.staticfiles',
 ]
 
-MY_APPS = ['Training_sessions','Users']
+MY_APPS = ['EASTeam','Training_sessions','Users']
 
 THIRD_APPS = []
 
@@ -134,4 +134,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 
 #print(f"Ruta estaticos: {STATICFILES_DIRS}")
-print('2)*********************************',STATICFILES_DIRS)
+#print('2)*********************************',STATICFILES_DIRS)
