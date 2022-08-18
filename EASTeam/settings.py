@@ -11,20 +11,23 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
 import os
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_3tauirz*5*3d9+grapm78jk0t@o$aupsyi+!jw-_p2$h0*^@v'
-
+#SECRET_KEY = 'django-insecure-_3tauirz*5*3d9+grapm78jk0t@o$aupsyi+!jw-_p2$h0*^@v'
+SECRET_KEY= env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -40,7 +43,7 @@ BASE_APPS = [
     'django.contrib.staticfiles',
 ]
 
-MY_APPS = ['Training_sessions','Users']
+MY_APPS = ['EASTeam','Training_sessions','Users']
 
 THIRD_APPS = []
 
@@ -110,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'es-ARG'
+LANGUAGE_CODE = 'es-ar'
 
 TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
@@ -134,4 +137,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 
 #print(f"Ruta estaticos: {STATICFILES_DIRS}")
-print('2)*********************************',STATICFILES_DIRS)
+#print('2)*********************************',STATICFILES_DIRS)
