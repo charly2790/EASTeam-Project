@@ -22,6 +22,10 @@ class Rpe(models.Model):
     name = models.CharField(max_length=40,blank = False, null = False)
     description = models.TextField(null = False)
 
+    class Meta:
+        verbose_name = 'Rpe'
+        verbose_name_plural = "Rpes"
+
 
 class Training_session(models.Model):
     user = models.ForeignKey(User,on_delete = models.DO_NOTHING)
@@ -34,6 +38,10 @@ class Training_session(models.Model):
     done = models.BooleanField(default=False)
     rpe = models.ForeignKey(Rpe,on_delete=models.DO_NOTHING)
     url = models.URLField()
+
+    class Meta:
+        verbose_name = 'Sesion de Entrenamiento'
+        verbose_name_plural = "Sesiones de Entrenamiento"
     
 
 
