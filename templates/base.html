@@ -35,17 +35,17 @@
             <ul class="navbar-nav mr-auto" >
                 {% if request.user.is_authenticated %}                                                 
                 <li class="nav-item" >
-                    <a class="fuente-navbar nav-link" href="#">Cerrar Sesión</a>
+                    <a class="fuente-navbar nav-link" href={% url 'account_logout' %}>Cerrar Sesión</a>
                 </li>
                 <li class="nav-item" >
                     <a class="fuente-navbar nav-link" href="#">{{request.user}}</a>
                 </li>
                 {% else %}
                 <li class="nav-item" >
-                    <a class="fuente-navbar nav-link" href="#">Iniciar Sesión</a>
+                    <a class="fuente-navbar nav-link" href={% url 'account_login' %}>Iniciar Sesión</a>
                 </li>
                 <li class="nav-item" >
-                    <a class="fuente-navbar nav-link" href="users/user-register/">Registrarme</a>
+                    <a class="fuente-navbar nav-link" href={% url 'account_signup' %}>Registrarme</a>
                 </li>
                               
                 {% endif %}
