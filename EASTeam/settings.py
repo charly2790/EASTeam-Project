@@ -45,9 +45,20 @@ BASE_APPS = [
 
 MY_APPS = ['EASTeam','Training_sessions','Users']
 
-THIRD_APPS = []
+THIRD_APPS = [
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+     # ... include the providers you want to enable:
+    'allauth.socialaccount.providers.google',
+
+
+]
 
 INSTALLED_APPS = BASE_APPS + MY_APPS + THIRD_APPS
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,7 +80,8 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                #Importante para Django AllAuth
+                'django.template.context_processors.request',                
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -138,3 +150,31 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 #print(f"Ruta estaticos: {STATICFILES_DIRS}")
 #print('2)*********************************',STATICFILES_DIRS)
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#(1) De esta forma el email se vuelve un dato obligatorio
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+#(2) Se setea el email como un dato obligatorio. Si pones (1) y no (2) pincha
+ACCOUNT_EMAIL_REQUIRED = True
+
+#De esta forma exige que la verificación por email sea realizada
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+#De esta forma se define el plazo de expiración para cuentas no validadas mediante correo electrónico
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
+
+#De esta forma indicas que al pulsar sobre logout no requerís una 2da confirmación.
+ACCOUNT_LOGOUT_ON_GET = True
+
+
+

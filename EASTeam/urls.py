@@ -21,6 +21,8 @@ from Users.views import user_register_view
 urlpatterns = [
     path('',index,name='index'),
     path('admin/', admin.site.urls),
+    #Todas las urls que necesite allauth p/ funcionar van a estar contenidas en la url accounts
+    path('accounts/', include('allauth.urls')),    
     path('users/',include('Users.urls')),
     
 ]
