@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from ensurepip import bootstrap
 from pathlib import Path
 import environ
 import os
@@ -52,6 +53,7 @@ THIRD_APPS = [
     'allauth.socialaccount',
      # ... include the providers you want to enable:
     'allauth.socialaccount.providers.google',
+    'crispy_forms',
 
 
 ]
@@ -175,6 +177,8 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 
 #De esta forma indicas que al pulsar sobre logout no requerís una 2da confirmación.
 ACCOUNT_LOGOUT_ON_GET = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 
