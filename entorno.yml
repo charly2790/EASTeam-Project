@@ -5,7 +5,9 @@ channels:
   - defaults
 dependencies: 
   - python=3.10.5
-  - django=4.1
-  - django-environ=0.4.5
-  - django-allauth
-
+  - nodejs
+  - pip:
+      - django-tailwind
+      - django==4.1
+      - django-environ==0.4.5
+      - django-allauth
