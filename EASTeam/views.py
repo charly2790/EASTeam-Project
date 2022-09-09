@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def index(request):
-    context = {'Prueba':'Hola Mundo'}
+    context = {}
     return render(request,'index.html',context = context)
 
 

@@ -24,7 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-_3tauirz*5*3d9+grapm78jk0t@o$aupsyi+!jw-_p2$h0*^@v'
 SECRET_KEY= env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
@@ -71,8 +70,8 @@ INTERNAL_IPS = [
 ]
 
 #path donde esta npm
-NPM_BIN_PATH = "C:/Users/gasto/.conda/envs/EAS_Team_Entorno/npm.cmd"
-
+#NPM_BIN_PATH = "C:/Users/gastonl/.conda/envs/EAS_Team_Entorno/npm.cmd"
+NPM_BIN_PATH = env.str('NPM_BIN_PATH')
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
