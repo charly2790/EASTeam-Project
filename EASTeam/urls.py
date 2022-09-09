@@ -19,6 +19,7 @@ from EASTeam.views import index
 
 urlpatterns = [
     path('',index,name='index'),
+    path("__reload__/", include("django_browser_reload.urls")),
     path('admin/', admin.site.urls),
     path('users/',include('Users.urls')),
     
