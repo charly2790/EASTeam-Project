@@ -15,13 +15,13 @@
 
 <body>    
     {% block header %}
-        {% include "header.html" %}
+        {% include "core/header.html" %}
     {% endblock header %}
     {% block body %}
-        {% include "galery.html" %}
+        {% include "core/galery.html" %}
     {% endblock body%}
     {% block footer %}
-        {% include "footer.html" %}
+        {% include "core/footer.html" %}
     {% endblock footer %}
     <script src={% static 'js/action-change.js'%}></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
