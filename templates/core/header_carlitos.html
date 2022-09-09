@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar "  style="background: black;">    
+    <a class="fuente-navbar navbar-brand" href="/"><img src="#" alt="" class= "img-logo"></a>
+    <button class="fuente-navbar navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        
+
+        <ul class="navbar-nav mr-auto" >
+            {% if request.user.is_authenticated %}                                                 
+            <li class="nav-item" >
+                <a class="fuente-navbar nav-link" href={% url 'account_logout' %}>Cerrar Sesión</a>
+            </li>
+            <li class="nav-item" >
+                <a class="fuente-navbar nav-link" href="#">{{request.user}}</a>
+            </li>
+            {% else %}
+            <li class="nav-item" >
+                <a class="fuente-navbar nav-link" href={% url 'account_login' %}>Iniciar Sesión</a>
+            </li>
+            <li class="nav-item" >
+                <a class="fuente-navbar nav-link" href={% url 'account_signup' %}>Registrarme</a>
+            </li>
+                          
+            {% endif %}
+            <li class="nav-item" >
+                <a class="fuente-navbar nav-link" href="#">Contacto</a>
+            </li>
+            <li class="nav-item" >
+                <a class="fuente-navbar nav-link" href="#">Quienes somos</a>
+            </li>   
+                   
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0" action = "/posts/search-post/" method="GET">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name = "search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </div>
+</nav>
