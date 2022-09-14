@@ -1,21 +1,36 @@
 {% extends "account/base.html" %}
-
+{%load static %}
+{% load tailwind_filters %}
+{% load crispy_forms_tags %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
-
+{% block header %}
+  {% include 'core/header.html' %}
+{% endblock header %}
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
-{% endblock %}
+<div class="flex bg-white text-gray-700 dark:bg-gradient-to-tr from-gray-100 via-gray-500 to-black   dark:text-gray-50 mb-0">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 w-1/3 h-screen">
+    <h1 class="text-gray-700 dark:text-gray-50">{% trans "Sign Up" %}</h1>
+  
+    <p class="text-gray-700 dark:text-gray-50">¿Ya tiene una cuenta? Por favor <a href="{{ login_url }}" class="text-blue-600 hover:underline dark:text-blue-500">inicie sesión</a>.</p>
+    
+    <form class="text-gray-700 dark:text-gray-50" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+      {% crispy form %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mt-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">{% trans "Sign Up" %}</button>
+    </form>
+  </div>
+  <div class=" flex flex-col w-2/3 justify-center items-center md:h-screen lg:py-0">
+      <picture>
+          <img class="md:w-screen h-screen" src= {% static '/images/running_register.jpeg' %} alt="running">
+      </picture>
+  </div>
+</div>
+{% endblock content %}
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}

@@ -58,6 +58,8 @@ THIRD_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
+    'crispy_forms',
+    'crispy_tailwind',
     #'django_extensions',
 ]
 
@@ -65,13 +67,17 @@ INSTALLED_APPS = BASE_APPS + MY_APPS + THIRD_APPS
 
 TAILWIND_APP_NAME = 'theme'
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
+
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
 #path donde esta npm
-#NPM_BIN_PATH = "C:/Users/gastonl/.conda/envs/EAS_Team_Entorno/npm.cmd"
 NPM_BIN_PATH = env.str('NPM_BIN_PATH')
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
