@@ -15,7 +15,7 @@
   
     <p class="text-gray-700 dark:text-gray-50">¿Ya tiene una cuenta? Por favor <a href="{{ login_url }}" class="text-blue-600 hover:underline dark:text-blue-500">inicie sesión</a>.</p>
     
-    <form class="text-gray-700 dark:text-gray-50" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <form id="signup_form" method="post" action="{% url 'account_signup' %}">
       {% csrf_token %}
       {% crispy form %}
       {% if redirect_field_value %}
