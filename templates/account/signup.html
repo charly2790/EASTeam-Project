@@ -15,9 +15,9 @@
   
     <p class="text-gray-700 dark:text-gray-50">¿Ya tiene una cuenta? Por favor <a href="{{ login_url }}" class="text-blue-600 hover:underline dark:text-blue-500">inicie sesión</a>.</p>
     
-    <form id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
       {% csrf_token %}
-      {% crispy form %}
+      {{ form | crispy}}
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}

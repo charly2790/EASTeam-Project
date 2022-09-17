@@ -76,7 +76,7 @@ INTERNAL_IPS = [
 ]
 
 #path donde esta npm
-NPM_BIN_PATH = env.str('NPM_BIN_PATH')
+NPM_BIN_PATH = os.environ.get('NPM_BIN_PATH')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -175,7 +175,14 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#Configuración de Envio de Mails Smtp
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = env.str('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD')
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
