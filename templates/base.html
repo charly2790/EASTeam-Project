@@ -1,4 +1,5 @@
 {% load static tailwind_tags %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src={% static 'js/chage-theme.js' %}></script>
+    <script src="https://kit.fontawesome.com/f2bc4b6f72.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href={% static 'css/whatsapp.css' %}>
     {% tailwind_css %}
     <title>
         {% block titulo %}
@@ -18,6 +21,9 @@
     {% endblock header %}
     {% block body %}
     {% endblock body%}
+    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
     {% block footer %}
     {% endblock footer %}
     <script src={% static 'js/action-change.js'%}></script>
