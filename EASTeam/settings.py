@@ -59,7 +59,6 @@ THIRD_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
-    #'django_extensions',
 ]
 
 INSTALLED_APPS = BASE_APPS + MY_APPS + THIRD_APPS
