@@ -842,6 +842,10 @@ select {
   margin-right: 1rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -858,10 +862,6 @@ select {
   margin-right: 0.25rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -872,10 +872,6 @@ select {
 
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-
-.mr-auto {
-  margin-right: auto;
 }
 
 .mr-auto {
@@ -926,8 +922,12 @@ select {
   width: 33.333333%;
 }
 
-.w-5 {
-  width: 1.25rem;
+.w-full {
+  width: 100%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .w-1\/2 {
