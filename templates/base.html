@@ -1,34 +1,32 @@
+{% load static tailwind_tags %}
 {% load static %}
-{% load tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src={% static 'js/chage-theme.js' %}></script>
+    <script src="https://kit.fontawesome.com/f2bc4b6f72.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href={% static 'css/whatsapp.css' %}>
     {% tailwind_css %}
     <title>
         {% block titulo %}
         {% endblock %}
     </title>
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"/>
-    
-    <link type = 'text/css' rel="stylesheet" href='{% static "css/styles.css" %}'  />
-      
 </head>
 
 <body>    
     {% block header %}
-        {% include "header_carlitos.html" %}
     {% endblock header %}
     {% block body %}
-        {% include "galery.html" %}
     {% endblock body%}
+    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
     {% block footer %}
-        {% include "footer.html" %}
     {% endblock footer %}
+    <script src={% static 'js/action-change.js'%}></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 </body>
+</html>
