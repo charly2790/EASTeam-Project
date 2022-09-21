@@ -14,7 +14,6 @@ comentado
 '''
 def dashboard(request):
     user = request.user
-    context = {}
+    context = {'user':user}
     print(user)
     return render (request,'users/dashboard.html',context)
-
